@@ -32,7 +32,7 @@ async function convertHTMLtoPDFBuffer(htmlContent, filePath) {
     });
 }
 
-async function encryptPDF(filePath, fileEncryptedPath, password) {
+async function encryptPDF(filePath, fileEncryptedPath, password) { 
     var pdf = coherentpdf.fromFile(filePath, '');
 
     var permissions = [coherentpdf.noEdit];
