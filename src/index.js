@@ -52,21 +52,21 @@ async function main() {
     const password = '1234';
 
     try{
-        // CONVERTER UM HTML PARA PDF E SALVAR EM UM CAMINHO ESPECIFICO
+        // CONVERT A HTML TO PDF AND SAVE IN SPECIFIC PATH
         await convertHTMLtoPDFFile(htmlContent, filePath);
 
-        // CONVERTER UM HTML PARA PDF E RETORNAR UM BUFFER
+        // CONVERT A HTML TO PDF AND RETURN A BUFFER
         const pdfBuffer = await convertHTMLtoPDFBuffer(htmlContent, filePath);
 
-        // INSERIR UMA SENHA NO ARQUIVO PDF E SALVAR EM UM CAMINHO ESPECIFICO
+        // INSERT A PASSWORD IN THE PDF FILE AND SAVE IN SPECIFIC PATH
         await encryptPDF(filePath, fileEncryptedPath, password);
 
-        // DELETAR O ARQUIVO INICIAL SEM SENHA
+        // DELETE THE INITIAL FILE WITHOUT PASSWORD
         await deleteFiles(filePath);
 
-        console.log("Sucesso ao gerar o PDF e encriptar");
+        console.log("Success in generating and encrypt PDf");
     } catch (error) {
-        console.log("Ocorreu um erro: " + error)
+        console.log("An error occurred: " + error)
     }
 }
 
